@@ -1,0 +1,80 @@
+Clone
+
+git clone https://github.com/udacity/asteroids
+
+
+Git log
+Get the IDs that you want to compare
+
+git diff ID1 ID2
+
+To get color into the diff:
+git config --global color.ui auto
+
+For example:
+┌─[pi]──[raspi-camilo]:~/education/asteroids$
+└──>>git config --global color.ui auto
+┌─[pi]──[raspi-camilo]:~/education/asteroids$
+└──>>git log
+commit 3884eab839af1e82c44267484cf2945a766081f3
+Author: cbuckey <caroline@udacity.com>
+Date:   Fri Apr 29 12:33:05 2011 -0700
+
+    Add color
+
+    commit 3e42136a76cf78c6c421cd720427bf6337c2d623
+    Author: Doug McInnes <doug@dougmcinnes.com>
+    Date:   Tue Mar 15 22:34:49 2011 -0700
+
+        now using requestAnimationFrame
+
+            see this for more info:
+                http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+
+                commit 4035769377cce96a88d5c1167079e12f30492391
+                Author: Doug McInnes <doug@dougmcinnes.com>
+                Date:   Wed Jun 9 21:04:32 2010 -0700
+
+                    frame interval was set wrong after game was paused
+
+                    commit 25ede836903881848fea811df5b687b59d962da3
+                    Author: Doug McInnes <doug@dougmcinnes.com>
+                    Date:   Wed May 26 23:52:00 2010 -0700
+                    ┌─[pi]──[raspi-camilo]:~/education/asteroids$
+                    └──>>git diff
+                    ┌─[pi]──[raspi-camilo]:~/education/asteroids$
+                    └──>>git diff 4035769377cce96a88d5c1167079e12f30492391 25ede836903881848fea811df5b687b59d962da3
+                    diff --git a/game.js b/game.js
+                    index 7595a9d..5daadb0 100644
+                    --- a/game.js
+                    +++ b/game.js
+                    @@ -1167,8 +1167,7 @@ $(function () {
+                                 }
+                                    };
+
+                                    -  var frameInterval = 25;
+                                    -  var mainLoopId = setInterval(mainLoop, frameInterval);
+                                    +  var mainLoopId = setInterval(mainLoop, 25);
+
+                                       $(window).keydown(function (e) {
+                                                switch (KEY_CODES[e.keyCode]) {
+                                                @@ -1182,7 +1181,7 @@ $(function () {
+                                                                   Text.renderText('PAUSED', 72, Game.canvasWidth/2 - 160, 120);
+                                                                            } else {
+                                                                                       lastFrame = Date.now();
+                                                                                       -          mainLoopId = setInterval(mainLoop, frameInterval);
+                                                                                       +          mainLoopId = setInterval(mainLoop, 10);
+                                                                                                }
+                                                                                                         break;
+                                                                                                                case 'm': // mute
+                                                                                                                ┌─[pi]──[raspi-camilo]:~/education/asteroids$
+                                                                                                                └──>>
+
+
+                                                                                                                Check out, resetting all files at a given point
+                                                                                                                $git checkout ID
+
+
+                                                                                                                Creating a new repository
+                                                                                                                $git init
+
