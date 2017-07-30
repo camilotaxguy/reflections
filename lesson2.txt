@@ -1,0 +1,8 @@
+Creating a new repository
+$git init
+
+HEAD = current commit
+
+$git status
+
+
