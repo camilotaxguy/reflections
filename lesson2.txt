@@ -5,4 +5,131 @@ HEAD = current commit
 
 $git status
 
+Creating a new repository
+$git init
+
+HEAD = current commit
+
+$git status
+
+pi (master +) reflections $ git config --global user.email "local@localhost"
+pi (master +) reflections $ git config --global user.name "rapi camilo"
+pi (master +) reflections $
+pi (master +) reflections $
+pi (master +) reflections $
+pi (master +) reflections $
+pi (master +) reflections $ git commit
+[master (root-commit) a7f967b] This is the first commit, includes my first file only
+ 1 file changed, 80 insertions(+)
+     create mode 100644 lesson1.txt
+     pi (master) reflections $ git status
+     On branch master
+     Untracked files:
+       (use "git add <file>..." to include in what will be committed)
+
+           lesson2.txt
+
+           nothing added to commit but untracked files present (use "git add" to track)
+           pi (master) reflections $ git log
+           commit a7f967baf9197ab7faf19e6329db6646a6789dd9
+           Author: rapi camilo <local@localhost>
+           Date:   Sun Jul 30 18:24:05 2017 -0500
+
+               This is the first commit, includes my first file only
+               pi (master) reflections $ git add lesson2.txt
+               pi (master +) reflections $ git commit "commit message added from prompt"
+               error: pathspec 'commit message added from prompt' did not match any file(s) known to git.
+               pi (master +) reflections $ git commit -m "commit message added from prompt"
+               [master cbadcb9] commit message added from prompt
+                1 file changed, 8 insertions(+)
+     create mode 100644 lesson2.txt
+     pi (master) reflections $
+     Continuing lesson 2
+
+     $camiloparedes ~ $ cd Documents/Study/git
+
+     Changed game.js to test, used the git status
+
+     pi (master *) asteroids $ git status
+     On branch master
+     Your branch is up-to-date with 'origin/master'.
+     Changes not staged for commit:
+       (use "git add <file>..." to update what will be committed)
+         (use "git checkout -- <file>..." to discard changes in working directory)
+
+             modified:   game.js
+
+             no changes added to commit (use "git add" and/or "git commit -a")
+             pi (master *) asteroids $
+
+             How to determine what has changed:
+
+             Use git diff to compare changes between two commits
+
+             $git diff   --- without parameters will compare working directory to staging area
+
+
+
+             Comparing staging area with repository:
+
+             pi (master +) asteroids $ git diff --staged
+             diff --git a/game.js b/game.js
+             index 49bf5ea..a4bf88e 100644
+             --- a/game.js
+             +++ b/game.js
+             @@ -1,6 +1,7 @@
+              // Canvas Asteroids
+              //
+              // Copyright (c) 2010 Doug McInnes
+             +// cparedes added to test modification
+              //
+
+              KEY_CODES = {
+                  pi (master +) asteroids $
+
+                      Restoring file in local from repository
+                      $pi (master *) asteroids $ git reset --hard
+
+
+
+
+                      BRANCHES
+
+                      $git branch ---> Shows current branch
+
+                      $git branch easy-mode ---> Creates “easy-mode” branch
+
+                      Move to “easy-mode” branch
+
+                      $git checkout easy-mode  ---> moves to “easy-mode” branch
+
+
+                      Make a change, add and commit in the branch
+
+
+
+                       
+
+                      Master branch is the PRODUCTION quality branch
+                      Other branches should be development or test
+
+                      MERGE
+
+                      $git merge master coins   ---> creates a merged master 
+
+
+                      You can delete a branch after it has been merged, it does not delete the commits, only the label
+                      $git branch -d coins ---> deletes coins
+
+                      pi (master) asteroids $ git branch -d coins
+                      Deleted branch coins (was 354dfdd).
+
+
+                      git merge will also include the currently checked-out branch in the merged version. So if you have branch1 checked out, and you run git merge branch2 branch3, the merged version will combine branch1 as well as branch2 and branch3.
+
+                      For this reason, you should always checkout one of the two branches you’re planning on merging before doing the merge. Which one you should check out depends on which branch label you want to point to the new commit.
+
+                      merge conflict will result due to the different LF and CRLF characters - To fix this, Windows users should set the global autocrlf attribute to true: git config --global core.autocrlf true. More information can be found here: https://help.github.com/articles/dealing-with-line-endings/#platform-all
+
+                      Diagramming Tools -- gliffy && yUML
 
